@@ -10,31 +10,34 @@ pub async fn listen(ip: &str, port: u16) -> anyhow::Result<()> {
 	let listener: TcpListener = TcpListener::bind(addr).await?;
 	println!("Listening...");
 
-	loop {
-		match listener.accept().await {
-			Ok(s) => {
-				println!("Connected");
-				let stream = s.0;
-				let (reader, writer) = stream.into_split();
-				let mut socket_stdin = BufWriter::new(writer);
-				let mut socket_stdout = BufReader::new(reader);
+	match listener.accept().await {
+		Ok(s) => {
+			println!("Connected");
+			let stream = s.0;
+			let (reader, writer) = stream.into_split();
+			let mut socket_stdin = BufWriter::new(writer);
+			let mut socket_stdout = BufReader::new(reader);
 
-				let mut stdin = stdin();
-				let mut stdout = stdout();
-				let mut stderr = stderr();
+			let mut stdin = stdin();
+			let mut stdout = stdout();
+			let mut stderr = stderr();
 
-				tokio::spawn(async move {
-					tokio::io::copy(&mut stdin, &mut socket_stdin).await.expect("Failed to copy from stdin to the socket");
-				});
+			let stdin_handle = tokio::spawn(async move {
+				tokio::io::copy(&mut stdin, &mut socket_stdin).await.expect("Failed to copy from stdin to the socket");
+			});
 
-				tokio::spawn(async move {
-					tokio::io::copy(&mut socket_stdout, &mut stdout).await.expect("Failed to copy from the socket to stdout");
-					tokio::io::copy(&mut socket_stdout, &mut stderr).await.expect("Failed to copy from the socket to stderr");
-				});
-			}
-			Err(_e) => {
-				return Err(TCPError::ConnectionFailure(addr).into());
-			}
+			let stdout_handle = tokio::spawn(async move {
+				tokio::io::copy(&mut socket_stdout, &mut stdout).await.expect("Failed to copy from the socket to stdout");
+				tokio::io::copy(&mut socket_stdout, &mut stderr).await.expect("Failed to copy from the socket to stderr");
+			});
+
+			let _ = stdin_handle.await;
+			let _ = stdout_handle.await;
+
+			Ok(())
+		}
+		Err(_e) => {
+			Err(TCPError::ConnectionFailure(addr).into())
 		}
 	}
 }
