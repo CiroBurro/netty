@@ -6,8 +6,12 @@ mod listener;
 mod reverse_shell;
 mod errors;
 
+/// Entry point of the program
+/// Async main function that returns a Result<(), anyhow::Error>
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
+
+	// CLI arguments parsing and checking
 	let args = Args::parse();
 	let ip: &str = args.address.as_str();
 	let port: u16 = args.port;
@@ -18,6 +22,7 @@ async fn main() -> anyhow::Result<()> {
 		return Err(errors::CLIError::IncompatibleArgs.into());
 	}
 
+	// Selection block to run the program as a listener or as a reverse shell
 	if args.listen {
 		match listener::listen(ip, port).await {
 			Ok(_) => Ok(()),
