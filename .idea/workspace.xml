@@ -11,8 +11,9 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b544d92e-fdad-4e08-ac80-bebf0f818e24" name="Changes" comment="exit input handled">
+    <list default="true" id="b544d92e-fdad-4e08-ac80-bebf0f818e24" name="Changes" comment="main docs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +140,8 @@
       <workItem from="1760117250743" duration="5127000" />
       <workItem from="1760187605098" duration="6452000" />
       <workItem from="1760286507966" duration="4526000" />
+      <workItem from="1760388895588" duration="557000" />
+      <workItem from="1760431849013" duration="170000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -188,7 +191,23 @@
       <option name="project" value="LOCAL" />
       <updated>1760290822864</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="dependency updated">
+      <option name="closed" value="true" />
+      <created>1760389013531</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1760389013531</updated>
+    </task>
+    <task id="LOCAL-00008" summary="main docs">
+      <option name="closed" value="true" />
+      <created>1760389442405</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1760389442405</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -236,6 +255,8 @@
     <MESSAGE value="listener updated" />
     <MESSAGE value="removed loop inside listener" />
     <MESSAGE value="exit input handled" />
-    <option name="LAST_COMMIT_MESSAGE" value="exit input handled" />
+    <MESSAGE value="dependency updated" />
+    <MESSAGE value="main docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="main docs" />
   </component>
 </project>
