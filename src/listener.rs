@@ -27,7 +27,7 @@ pub async fn listen(ip: &str, port: u16) -> anyhow::Result<()> {
 	// Wait for a new connection
 	match listener.accept().await {
 		Ok(s) => {
-			println!("Connected");
+			println!("Connected to {}", addr);
 
 			let (tx, mut rx) = mpsc::channel::<()>(1); // Needed to transimit the exit flag
 			let stream = s.0;
@@ -80,6 +80,7 @@ pub async fn listen(ip: &str, port: u16) -> anyhow::Result<()> {
 				_ = stdin_handle => {},
 				_ = stdout_handle => {},
 				_ = rx.recv() => {
+					println!("Connection closed successfully");
 					exit(0);
 				}
 			}

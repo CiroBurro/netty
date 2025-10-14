@@ -11,9 +11,7 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b544d92e-fdad-4e08-ac80-bebf0f818e24" name="Changes" comment="errors docs">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b544d92e-fdad-4e08-ac80-bebf0f818e24" name="Changes" comment="listener docs">
       <change beforePath="$PROJECT_DIR$/src/listener.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/listener.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +142,7 @@
       <workItem from="1760388895588" duration="557000" />
       <workItem from="1760431849013" duration="655000" />
       <workItem from="1760435139118" duration="15000" />
-      <workItem from="1760435170089" duration="1184000" />
+      <workItem from="1760435170089" duration="1535000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -226,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760432297720</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="listener docs">
+      <option name="closed" value="true" />
+      <created>1760436367265</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1760436367265</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -277,6 +283,7 @@
     <MESSAGE value="dependency updated" />
     <MESSAGE value="main docs" />
     <MESSAGE value="errors docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="errors docs" />
+    <MESSAGE value="listener docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="listener docs" />
   </component>
 </project>
