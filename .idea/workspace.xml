@@ -11,9 +11,7 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b544d92e-fdad-4e08-ac80-bebf0f818e24" name="Changes" comment="listener log messages updated">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b544d92e-fdad-4e08-ac80-bebf0f818e24" name="Changes" comment="README.md" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,6 +149,7 @@
       <workItem from="1760453443275" duration="140000" />
       <workItem from="1760454712507" duration="66000" />
       <workItem from="1760521103774" duration="158000" />
+      <workItem from="1760524147986" duration="77000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -248,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760436738268</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="README.md">
+      <option name="closed" value="true" />
+      <created>1760524211852</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1760524211852</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -301,6 +308,7 @@
     <MESSAGE value="errors docs" />
     <MESSAGE value="listener docs" />
     <MESSAGE value="listener log messages updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="listener log messages updated" />
+    <MESSAGE value="README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="README.md" />
   </component>
 </project>
