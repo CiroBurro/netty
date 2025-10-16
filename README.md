@@ -30,7 +30,7 @@ payload connects back to the listener, allowing the listener to execute commands
 First, clone the repository and build the project:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/CiroBurro/netty.git
 cd netty
 cargo build --release
 ```
